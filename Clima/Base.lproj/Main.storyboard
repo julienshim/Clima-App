@@ -39,7 +39,7 @@
                                                 <rect key="frame" x="31" y="0.0" width="287.5" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemFillColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="go"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zPP-uz-S6B">
                                                 <rect key="frame" x="328.5" y="0.0" width="45.5" height="40"/>
@@ -49,6 +49,9 @@
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system" title=""/>
+                                                <connections>
+                                                    <action selector="searchPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LMS-B1-hcZ"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -112,6 +115,9 @@
                             <constraint firstItem="pQI-Cd-f6k" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="yRN-oX-dpT"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchTextField" destination="kO1-SI-DCn" id="8Qs-Jx-H9T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
