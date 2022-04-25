@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  WeatherViewController.swift
 //  Clima
 //
 //  Created by Julien Shim on 4/19/22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class WeatherViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var searchTextField: UITextField!
     override func viewDidLoad() {
@@ -20,6 +20,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         searchTextField.endEditing(true)
         print(searchTextField.text!)
     }
+    
+    var weatherManager = WeatherManager()
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchTextField.endEditing(true)
@@ -36,6 +38,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+        if let city = searchTextField.text {
+            weatherManager.fetchWeather(cityName: city)
+        }
+        
         searchTextField.text = ""
     }
     
